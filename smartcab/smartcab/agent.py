@@ -28,7 +28,7 @@ class LearningAgent(Agent):
         deadline = self.env.get_deadline(self)
         
         # TODO: Update state
-        stateForq = str(inputs['state']['destination'][0]- inputs['state']['location'][0])+str(inputs['state']['destination'][1]- inputs['state']['location'][1])+str(inputs['state']['heading'])
+        stateForq=str(inputs['state']['destination'][0]- inputs['state']['location'][0])+str(inputs['state']['destination'][1]- inputs['state']['location'][1])+str(inputs['state']['heading'])
 
         # TODO: Select action according to your policy
         action = random.choice([None, 'forward', 'left', 'right'])
@@ -51,7 +51,7 @@ class LearningAgent(Agent):
         self.previousQstate = stateForq
         self.oldreward = reward
 
-        print self.Q, '\n'
+        #print self.Q, '\n'
         #print "LearningAgent.update(): deadline = {}, inputs = {}, action = {}, reward = {}".format(deadline, inputs, action, reward)  # [debug]
         #print 'Q = {}\nlength  = {}\n'.format(self.Q[:][:][:],len(self.Q) if len(self.Q) else 'noneEE')
         #wait = input('press a key to continue ')
